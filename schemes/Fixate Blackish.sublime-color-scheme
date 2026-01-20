@@ -1,0 +1,518 @@
+{
+    "name": "Fixate Blackish",
+    "author": "Postnumbers",
+    "variables":
+    {
+        "black": "hsl(0, 0%, 0%)", // #000000
+        "blue": "hsl(223, 100%, 76%)", // #85A7FF
+        "blue2": "hsl(206, 74%, 70%)", // #79BAEB
+        "blue3": "hsl(223, 100%, 65%)", // #4D7EFF
+        "gray": "hsl(216, 15%, 10%)", // #16191D
+        "gray2": "hsl(216, 10%, 24%)", // #373C43
+        "gray3": "hsl(216, 10%, 32%)", // #49505A
+        "gray4": "hsl(216, 10%, 18%)", // #292D32
+        "gray5": "hsl(216, 10%, 36%)", // #535A65
+        "gray6": "hsl(216, 10%, 22%)", // #32373E
+        "green": "hsl(95, 35%, 62%)", // #98C07C
+        "orange": "hsl(30, 85%, 70%)", // #F4B371
+        "pink": "hsl(290, 40%, 70%)", // #C794D1
+        "purple": "hsl(250, 100%, 77%)", // #9D8AFF
+        "purple2": "hsl(250, 71%, 80%)", // #B4A8F0
+        "red": "hsl(354, 42%, 56%)", // #BF616A
+        "red2": "hsl(9, 100%, 43%)", // #DA2000
+        "red3": "hsl(9, 100%, 30%)", // #981600
+        "red4": "hsl(309, 92%, 48%)", // #ED0ACB
+        "red5": "hsl(345, 68%, 35%)", // #961D3C
+        "teal": "hsl(184, 47%, 55%)", // #56BBC2
+        "white": "hsl(224, 12%, 83%)", // #CDD0D8
+        "yellow": "hsl(60, 100%, 65%)", // #FFFF4D
+        "yellow2": "hsl(60, 56%, 65%)", // #D8D874
+        "yellow3": "hsl(58, 30%, 50%)" // #A6A359
+    },
+    "globals":
+    {
+        "background": "var(gray)",
+        "foreground": "var(white)",
+        "accent": "var(white)",
+        "caret": "var(yellow)",
+        "block_caret": "var(white)",
+        "fold_marker": "var(yellow2)",
+        "gutter": "var(gray)",
+        "gutter_foreground": "color(var(white) alpha(0.5))",
+        "gutter_foreground_highlight": "color(var(white) alpha(0.7))",
+        "selection": "var(gray3)",
+        "selection_border": "var(gray5)",
+        "inactive_selection": "var(gray2)",
+        "invisibles": "var(gray3)",
+        "line_highlight": "var(gray4)",
+        "misspelling": "var(red)",
+        "shadow": "color(var(gray) alpha(0.25))",
+        "guide": "color(var(white) alpha(0.2))",
+        "active_guide": "color(var(blue) alpha(0.5))",
+        "stack_guide": "color(var(white) alpha(0.2))",
+        "find_highlight_foreground": "var(black)",
+        "find_highlight": "color(var(orange) alpha(0.8))",
+        "highlight": "var(blue)",
+        "scroll_highlight": "var(blue)",
+        "scroll_selected_highlight": "var(orange)",
+        "rulers": "color(var(white) alpha(0.2))",
+        "brackets_options": "foreground bold",
+        "brackets_foreground": "var(orange)",
+        "bracket_contents_options": "foreground bold",
+        "bracket_contents_foreground": "var(teal)",
+        "tags_options": "foreground",
+        "tags_foreground": "var(orange)"
+    },
+    "rules":
+    [
+        {
+            "name": "Comments, Markdown Strikethrough",
+            "scope": "comment, punctuation.definition.comment, markup.strikethrough, punctuation.definition.strikethrough",
+            "foreground": "color(var(white) alpha(0.6))"
+        },
+        {
+            "name": "Docstring",
+            "scope": "comment.block.documentation.summary, comment.block.documentation",
+            "foreground": "var(blue2)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Comment",
+            "scope": "comment.line.number-sign",
+            "foreground": "var(yellow2)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Comment Doubleslash",
+            "scope": "comment.line.double-slash",
+            "font_style": "italic"
+        },
+        {
+            "name": "Variable",
+            "scope": "variable",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Number, Constant, Tag Attribute, Embedded",
+            "scope": "constant.numeric, constant.character, punctuation.section.embedded, keyword.other.unit, constant.numeric.value.python, punctuation.separator.decimal",
+            "foreground": "var(teal)"
+        },
+        {
+            "name": "Booleans",
+            "scope": "constant.language.boolean - constant.language.boolean.true.yaml - constant.language.boolean.true.json - constant.language.boolean.false.yaml - constant.language.boolean.false.json",
+            "foreground": "var(pink)"
+        },
+        {
+            "name": "Other Variable, String Link",
+            "scope": "support.other.variable, string.other.link",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Keyword, Storage",
+            "scope": "keyword, storage",
+            "foreground": "color(var(white) alpha(0.7))"
+        },
+        {
+            "name": "Operator",
+            "scope": "keyword.operator, constant.other",
+            "foreground": "color(var(white) alpha(0.8))"
+        },
+        {
+            "name": "Punctuation",
+            "scope": "punctuation, punctuation.section.block, punctuation.section.function, punctuation.section.frontmatter",
+            "foreground": "color(var(white) alpha(0.7))"
+        },
+        {
+            "name": "String",
+            "scope": "string, constant.other.placeholder",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Regular Expression String",
+            "scope": "string.regexp, keyword.operator.quantifier.regexp, keyword.operator.logical.regexp, punctuation.definition.set, punctuation.definition.set.end.regexp, punctuation.section.group regexp",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Escaped character",
+            "scope": "constant.character.escape, keyword.control.character-class.regexp",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Bracket",
+            "scope": "punctuation.section",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Tag",
+            "scope": "entity.name.tag, meta.tag.sgml",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Function, Special Function, Special Method, Block Level",
+            "scope": "keyword.other.special-method, support.function",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "User-Defined Function",
+            "scope": "entity.name.function",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Function Argument",
+            "scope": "variable.parameter",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Line Continuations",
+            "scope": "punctuation.separator.continuation",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Symbols, Inherited Class",
+            "scope": "constant.other.symbol, constant.other.key, meta.group.braces.curly, entity.other.inherited-class, constant.other.object.key.js, string.unquoted.label.js",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Class, Support",
+            "scope": "entity.name.class, entity.name.type.class, support, support.other.namespace.use.php, meta.use.php, support.other.namespace.php, markup.changed.git_gutter",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Language methods",
+            "scope": "variable.language",
+            "font_style": "italic",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Attributes",
+            "scope": "entity.other.attribute-name",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "URL",
+            "scope": "*url*, *link*, *uri*",
+            "font_style": "underline",
+            "foreground": "var(blue3)"
+        },
+        {
+            "name": "Search Results Nums",
+            "scope": "constant.numeric.line-number.find-in-files - match",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Search Results Lines",
+            "scope": "entity.name.filename.find-in-files",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Markdown Heading",
+            "scope": "markup.heading",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Markdown Heading Definition",
+            "scope": "punctuation.definition.heading",
+            "foreground": "color(var(green) alpha(0.3))"
+        },
+        {
+            "name": "Markdown Heading1",
+            "scope": "markup.heading.1",
+            "foreground": "var(green)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown Heading 1 Definition",
+            "scope": "markup.heading.1.markdown punctuation.definition.heading",
+            "foreground": "color(var(green) alpha(0.3))"
+        },
+        {
+            "name": "Markdown Heading2",
+            "scope": "markup.heading.2",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Markdown Heading 2 Definition",
+            "scope": "markup.heading.2.markdown punctuation.definition.heading",
+            "foreground": "color(var(blue) alpha(0.3))"
+        },
+        {
+            "name": "Markdown Heading3+",
+            "scope": "markup.heading.3, markup.heading.4, markup.heading.5, markup.heading.6",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Markdown Heading 3+ Definition",
+            "scope": "markup.heading.3.markdown punctuation.definition.heading, markup.heading.4.markdown punctuation.definition.heading,markup.heading.5.markdown punctuation.definition.heading, markup.heading.6.markdown punctuation.definition.heading",
+            "foreground": "color(var(purple) alpha(0.3))"
+        },
+        {
+            "name": "Markdown Text",
+            "scope": "meta.paragraph",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Markdown Emphasis Punctuation",
+            "scope": "punctuation.definition.bold.begin.markdown, punctuation.definition.bold.end.markdown, punctuation.definition.italic.begin.markdown, punctuation.definition.italic.end.markdown",
+            "foreground": "color(var(blue2) alpha(0.3))"
+        },
+        {
+            "name": "Markdown Italic",
+            "scope": "markup.italic",
+            "foreground": "var(blue2)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markdown Bold",
+            "scope": "markup.bold",
+            "foreground": "var(blue2)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown Bold/Italic",
+            "scope": "markup.bold_italic, markup.bold & markup.italic",
+            "foreground": "var(blue2)",
+            "font_style": "bold italic"
+        },
+        {
+            "name": "Markdown Underline",
+            "scope": "markup.underline",
+            "foreground": "var(blue2)",
+            "font_style": "underline"
+        },
+        {
+            "name": "Markdown Checkbox Punctuation",
+            "scope": "punctuation.definition.checkbox",
+            "foreground": "var(orange)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown Checkbox Mark",
+            "scope": "markup.checkbox.mark",
+            "foreground": "var(teal)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown List Items Numbering",
+            "scope": "punctuation.definition.list_item.markdown, markup.list.numbered",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Markdown List Bullet",
+            "scope": "markup.list.unnumbered.bullet",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Markdown Link Punctuation",
+            "scope": "punctuation.definition.link, punctuation.definition.metadata",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Markdown Link Description",
+            "scope": "meta.image.inline.description.markdown, meta.image.reference.description.markdown, meta.link.inline.description.markdown, meta.link.reference.description.markdown, meta.link.reference.literal.description.markdown",
+            "foreground": "var(teal)"
+        },
+        {
+            "name": "Markdown Inline Link URL",
+            "scope": "meta.link.inline markup.underline.link",
+            "foreground": "var(purple)"
+        },
+        {
+            "name": "Markdown Link URL",
+            "scope": "markup.underline.link, constant.other.reference.link",
+            "foreground": "var(blue3)"
+        },
+        {
+            "name": "Markdown Blockquote Text",
+            "scope": "markup.quote",
+            "foreground": "var(purple2)",
+            "font_style": "italic"
+        },
+        {
+            "name": "Markdown Blockquote Punctuation",
+            "scope": "punctuation.definition.blockquote.markdown",
+            "foreground": "color(var(purple2) alpha(1))"
+        },
+        {
+            "name": "Markdown Code Block Text",
+            "scope": "markup.raw.block, markup.raw.code-fence, meta.code-fence.body",
+            "background": "var(gray6)",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Markdown Code Block Punctuation",
+            "scope": "punctuation.definition.raw.code-fence.begin.markdown, punctuation.definition.raw.code-fence.end.markdown, meta.code-fence.definition.begin.markdown-gfm, meta.code-fence.definition.end.markdown-gfm, meta.code-fence",
+            "foreground": "color(var(white) alpha(0.5))"
+        },
+        {
+            "name": "Markdown Code Block Language",
+            "scope": "constant.other.language-name",
+            "foreground": "color(var(white) alpha(0.5))"
+        },
+        {
+            "name": "Markdown Inline Code Text",
+            "scope": "markup.raw.inline - punctuation.definition.raw",
+            "background": "var(gray6)",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Markdown Inline Code Punctuation",
+            "scope": "punctuation.definition.raw.begin.markdown, punctuation.definition.raw.end.markdown",
+            "foreground": "color(var(white) alpha(0.5))"
+        },
+        {
+            "name": "Markdown Highlighted Text",
+            "scope": "markup.highlight.markdown",
+            "background": "var(yellow3)",
+            "foreground": "var(black)",
+            "font_style": "bold"
+        },
+        {
+            "name": "Markdown Highlight Punctuation",
+            "scope": "punctuation.definition.highlight",
+            "foreground": "color(var(yellow3) alpha(0.5))",
+            "background": "var(gray)"
+        },
+        {
+            "name": "Markdown Tag Punctuation",
+            "scope": "punctuation.definition.anchor",
+            "foreground": "var(teal)"
+        },
+        {
+            "name": "Markdown Tag Text",
+            "scope": "markup.anchor",
+            "foreground": "var(teal)"
+        },
+        {
+            "name": "Markdown Table Definition",
+            "scope": "pucntuation.separator.table-cell, punctuation.section.table-header",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Markdown Inserted",
+            "scope": "markup.inserted",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Markdown Deleted",
+            "scope": "markup.deleted",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "Markdown Changed",
+            "scope": "markup.changed",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "Sublime Color Scheme Global Attributes",
+            "scope": "meta.main-key.sublime-color-scheme string.quoted, keyword.other.main.sublime-color-scheme",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "Sublime Color Scheme Variables",
+            "scope": "entity.name.variable.sublime-color-scheme",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "Sublime Color Scheme and Rule Attributes",
+            "scope": "meta.globals-key.sublime-color-scheme string.quoted, keyword.other.rule.sublime-color-scheme",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "JSON/YAML Keys",
+            "scope": "meta.mapping.key string",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "JSON/YAML Key Values",
+            "scope": "meta.mapping.value string, meta.mapping.value constant.numeric, keyword.other.name, text.html.markdown meta.mapping.key string, text.html.markdown meta.mapping.key constant.language, (meta.string.yaml string) - meta.mapping.key.yaml",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "JSON Key Value Mapping Separator",
+            "scope": "punctuation.separator.mapping.key-value.json",
+            "foreground": "color(var(white) alpha(0.7))"
+        },
+        {
+            "name": "JS Sub-methods",
+            "scope": "entity.name.module.js, variable.import.parameter.js, variable.other.class.js",
+            "foreground": "var(blue)"
+        },
+        {
+            "name": "JS Entity Name Methods",
+            "scope": "entity.name.method.js",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "JS Decorators",
+            "scope": "tag.decorator.js entity.name.tag.js, tag.decorator.js punctuation.definition.tag.js",
+            "font_style": "italic",
+            "foreground": "color(var(white) alpha(0.8))"
+        },
+        {
+            "name": "Handlebars Constants",
+            "scope": "meta.function.block.start.handlebars support.constant.handlebars, meta.function.block.end.handlebars support.constant.handlebars, text.html.handlebars meta.function.inline.other.handlebars variable.parameter.handlebars, text.html.handlebars meta.function.inline.other.handlebars support.constant.handlebars",
+            "foreground": "var(teal)"
+        },
+        {
+            "name": "Handlebars Properties",
+            "scope": "entity.other.attribute-name.handlebars variable.parameter.handlebars",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "ES7 Bind Operator",
+            "scope": "source.js constant.other.object.key.js string.unquoted.label.js",
+            "font_style": "italic",
+            "foreground": "var(red)"
+        },
+        {
+            "name": "Python Flake8 Lint Gutter Mark",
+            "scope": "flake8lint.mark.gutter",
+            "foreground": "var(white)"
+        },
+        {
+            "name": "Python Flake8 Lint Error",
+            "scope": "flake8lint.mark.error",
+            "foreground": "var(red2)"
+        },
+        {
+            "name": "Python Flake8 Lint Critical",
+            "scope": "flake8lint.mark.critical",
+            "foreground": "var(red3)"
+        },
+        {
+            "name": "Python Flake8 Lint Warning",
+            "scope": "flake8lint.mark.warning",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitGutter deleted",
+            "scope": "markup.deleted.git_gutter",
+            "foreground": "var(red4)"
+        },
+        {
+            "name": "GitGutter inserted",
+            "scope": "markup.inserted.git_gutter",
+            "foreground": "var(green)"
+        },
+        {
+            "name": "GitGutter changed",
+            "scope": "markup.changed.git_gutter",
+            "foreground": "var(orange)"
+        },
+        {
+            "name": "GitGutter ignored",
+            "scope": "markup.ignored.git_gutter",
+            "foreground": "color(var(white) alpha(0.8))"
+        },
+        {
+            "name": "GitGutter untracked",
+            "scope": "markup.untracked.git_gutter",
+            "foreground": "color(var(white) alpha(0.4))"
+        },
+        {
+            "name": "GitGutter line annotation",
+            "scope": "comment.line.annotation.git_gutter",
+            "foreground": "var(white)"
+        }
+    ]
+}

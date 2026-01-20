@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 postnumbers
+Copyright (c) 2018 Koen Lageveen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+The above license relates to some of the file icons and all of the file
+icon functionality of the FileIcons package that has been integrated into this
+package. The remainder of the content is the product and copyright of
+Postnumbers, and is accessible under the same terms noted above.

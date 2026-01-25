@@ -76,9 +76,8 @@
         {
             "name": "Comment",
             "scope": "comment.line.number-sign",
-            "foreground": "var(black)",
-            "background": "var(yellow)",
-            "font_style": "italic"
+            "foreground": "var(orange)",
+            "font_style": "italic bold"
         },
         {
             "name": "Comment Doubleslash",
